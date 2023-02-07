@@ -17,12 +17,12 @@ class PaymentMethod extends \Magento\Payment\Model\Method\AbstractMethod
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $quote = $objectManager->create('Magento\Checkout\Model\Cart')->getQuote();
         $shippingCity = $quote->getShippingAddress()->getCity();
-        $logger->info($shippingCity);
+        // $logger->info($shippingCity);
 
 
         $scopeConfig=$objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
         $restrictedcity=$scopeConfig->getValue('payment/testpayment/city', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-        $logger->info($restrictedcity);
+        // $logger->info($restrictedcity);
         if($shippingCity==$restrictedcity)
             return true;
         return false;

@@ -69,11 +69,11 @@ class Shipping extends \Magento\Shipping\Model\Carrier\AbstractCarrier implement
         $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/custom.log');
         $logger = new \Zend_Log();
         $logger->addWriter($writer);
-        $logger->info($method->getMethod());
+        // $logger->info($method->getMethod());
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $scopeConfig=$objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
         $restrictedcity=$scopeConfig->getValue('carriers/samedayship/city', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-        $logger->info($restrictedcity);
+        // $logger->info($restrictedcity);
         if ($method->getMethod() == 'samedayship') { 
             if ($request->getDestCity() == $restrictedcity) { 
                 $result->append($method);

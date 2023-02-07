@@ -3,13 +3,17 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $customerSession = $objectManager->create('Magento\Customer\Model\Session');
 $quote = $objectManager->create('Magento\Checkout\Model\Cart')->getQuote();
 $itemsCount = $quote->getItemsCount();
+
+$Names=array();
+foreach ($quote->getAllItems() as $item) {
+    array_push($Names,$item->getName());
+}
 ?>
-<h1>Write Your order comment here...</h1>
-<form id="save" action="/savecomment/index/save" method="POST">
+<form id="save" action="/savecomment/index/save" method="POST" style="margin-top:-100px">
     <?php for ($i = 1; $i <= $itemsCount; $i++) : ?>
-        <span>order comment for item <?php echo $i ?></span>
+        <span>order comment for item <?php echo $Names[$i-1] ?></span>
         <br>
-        <input type="text" name="<?php echo "comment" . $i ?>" id="<?php echo "comment" . $i ?>" placeholder="order comment for item <?php echo $i ?> ...." style="width: 631px;height: 50px;">
+        <input type="text" name="<?php echo "comment" . $i ?>" id="<?php echo "comment" . $i ?>" placeholder="order comment for item <?php echo $Names[$i-1] ?> ...." style="width: 631px;height: 50px;">
         <br>
         <br>
     <?php endfor; ?>
