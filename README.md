@@ -38,7 +38,7 @@ Graphql Queries:
 
 A). For edit or update entire order comment:
 
-{
+`{
   editCommentAttribute(
    	 id: 3,
    	entireOrderComment: "string")
@@ -47,8 +47,8 @@ A). For edit or update entire order comment:
     		id
     		updatedComment
   	}
-}
-	Where parameter `id` is order id or order number and `entireOrderComment` is comment         
+}`
+Where parameter `id` is order id or order number and `entireOrderComment` is comment         
 that we have to update or edit. 
 
 
@@ -56,7 +56,7 @@ that we have to update or edit.
 
 B). For edit or update customer attribute company name:
 
-{
+`{
   editCustomerAttributes(
 email: "ritesh.rana@sigmainfo.net",
  companyName: "Sigma")
@@ -64,13 +64,13 @@ email: "ritesh.rana@sigmainfo.net",
     		flag
     		updatedCompanyName
   	}
-}
+}`
 Where parameter `email` is of customer and `companyName` is company name that we have to update or edit
 
 
 C). For edit or update Product Attribute unit of measure:
 
-{
+`{
   editProductAttributes(
  id: 0,
     	sku: "shirt",
@@ -80,7 +80,7 @@ C). For edit or update Product Attribute unit of measure:
     		sku
     		updatedUnit
   	}
-}
+}`
 Where parameter `id` is product id ,`sku`  is sku of the product and `unit` unit of measure that we have to update or edit. In this unit can be ‘kg’,’l’,’gm’ or ‘ml’.
 We can load product by its id or by sku, if loaded by sku then id should be 0.
 
@@ -88,7 +88,7 @@ We can load product by its id or by sku, if loaded by sku then id should be 0.
 
 D). For edit or update order comment for Product:
 
-{
+`{
   editProductComment(
     	id: 3,
     	sku: "shirt",
@@ -98,11 +98,9 @@ D). For edit or update order comment for Product:
     		sku
     		updatedComment
   	}
-}
+}`
 Where parameter `id` is order id or order number that can be obtain from placing order.
 And `sku`  is the sku of the product that is available in placed order.
 And `comment` is the comment that we need to update.  
 
- 
-
-
+Thanks.
