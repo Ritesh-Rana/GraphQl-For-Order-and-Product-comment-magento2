@@ -1,0 +1,47 @@
+type Query {
+    editCommentAttribute (
+        id: Int! @doc(description: "Id or Order number")
+        entireOrderComment: String! @doc(description: "Pass Entire Order Comment")
+    ): EditCommentsAttributesOutput @resolver(class: "Abc\\Def\\Model\\Resolver\\EditCommentsAttributes") @doc(description: " Some stuf ")
+    
+    editCustomerAttributes (
+        email: String! @doc(description: "Pass email of customer")
+        companyName: String! @doc(description: " Change the company Name for given customer email ")
+    ): EditCustomerAttributesOutput @resolver(class: "Abc\\Def\\Model\\Resolver\\EditCustomerAttributes") @doc(description: " some stuf ")
+
+     editProductAttributes (
+        id: Int! @doc(description: "Pass Product Id")
+        sku: String! @doc(description: "Pass Sku of the product")
+        unit: String! @doc(description: " Change the unit of measure with this unit ")
+    ): EditProductAttributesOutput @resolver(class: "Abc\\Def\\Model\\Resolver\\EditProductAttributes") @doc(description: "some stuf ")
+
+    editProductComment(
+        id: Int! @doc(description: "Id or Order number")
+        sku: String! @doc(description: "Pass Sku of the product for which have to update Comment")
+        comment: String! @doc(description: "Provide comment for update")
+    ): EditProductCommentOutput @resolver(class: "Abc\\Def\\Model\\Resolver\\EditProductComment") @doc(description: "some stuf ")
+}
+
+type EditCommentsAttributesOutput @doc(description: "Update Comments Attributes By Order Number Or Id") {
+    id: Int @doc(description: "Order number or Id ")
+    entireOrderCommentUpdateFlag: String @doc(description: "Update Flag 1 or 0 for Entire Order Comment")
+    updatedComment: String @doc(description: "Updated Entire Order Comment")
+}
+
+type EditCustomerAttributesOutput @doc(description: "Update Customer Attributes By Email") {
+    updatedCompanyName: String @doc(description: "Updated company Name")
+    flag: String @doc(description: "Flag is updated or not")
+}
+
+type EditProductAttributesOutput @doc(description: "Update Product Attributes By Product Id Or SKU") {
+    sku: String @doc(description: "Product SKU ")
+    updatedUnit: String @doc(description: "Updated Unit of product")
+    flag: String @doc(description: "Flag is updated or not")
+}
+
+type EditProductCommentOutput @doc(description: "Update Product comment By Product order Id and SKU") {
+    sku: String @doc(description: "Product SKU ")
+    updatedComment: String @doc(description: "Updated comment of product")
+    flag: String @doc(description: "Flag is updated or not")
+}
+
