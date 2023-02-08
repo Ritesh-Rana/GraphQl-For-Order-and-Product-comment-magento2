@@ -9,7 +9,7 @@ foreach ($quote->getAllItems() as $item) {
     array_push($Names,$item->getName());
 }
 ?>
-<form id="save" action="/savecomment/index/save" method="POST" style="margin-top:-300px">
+<form id="save" action="/savecomment/index/save" method="POST" style="margin-top:-420px">
     <?php for ($i = 1; $i <= $itemsCount; $i++) : ?>
         <span>order comment for item <?php echo $Names[$i-1] ?></span>
         <br>
