@@ -73,9 +73,10 @@ class Shipping extends \Magento\Shipping\Model\Carrier\AbstractCarrier implement
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $scopeConfig=$objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
         $restrictedcity=$scopeConfig->getValue('carriers/samedayship/city', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $allowed=explode(',',$restrictedcity);
         // $logger->info($restrictedcity);
         if ($method->getMethod() == 'samedayship') { 
-            if ($request->getDestCity() == $restrictedcity) { 
+            if (in_array($request->getDestCity(),$allowed)) { 
                 $result->append($method);
             }
         } else {
