@@ -29,8 +29,8 @@ Steps to run graphql queries:
 Add one google chrome extension 
 https://chrome.google.com/webstore/detail/altair-graphql-client/flnheeellpciglgpaodhkhmapeljopja?hl=en
 
-Setup url 
-http://hostname/graphql example:
+Setup url with POST method 
+example: http://hostname/graphql
 
 
 
