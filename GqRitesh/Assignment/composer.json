@@ -1,1 +1,25 @@
-
+{
+  "name": "gqritesh/assignment",
+  "description": "gqritesh/assignment",
+  "type": "magento2-module",
+  "version": "1.1.1",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "ritesh",
+      "email": "ritesh.rana@gmail.com",
+      "role": "Leader"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Mageplaza\\Seo\\": ""
+    }
+  }
+}
